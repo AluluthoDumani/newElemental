@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visio Fund</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Header with Logo and Hamburger Menu -->
+    <header class="top-header">
+        <div class="header-container">
+            <a class="logo-link" title="Visio" href="#">
+                <!-- LOGO IMAGE SHOULD BE PLACED HERE -->
+                <!-- Comment: Replace with actual black logo SVG -->
+                <img src="/images/visio-logo-black.svg" alt="Visio">
+            </a>
+            <div class="page-submenu">
+                <!-- Submenu content will be dynamically populated -->
+            </div>
+            <a class="hamburger-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </header>
+    
+    <!-- Full Screen Navigation Menu -->
+    <nav class="main-navigation">
+        <div class="nav-container">
+            <a class="close-button"></a>
+
+            <a class="nav-logo" href="#">
+                <!-- Comment: Replace with actual white logo SVG -->
+                <img src="/images/visiologo-white.svg" alt="Visio">
+            </a>
+            
+            <div class="menu-container">
+                <ul id="main-menu" class="menu">
+                    <li class="menu-item has-children">
+                        <a href="#">Who We Are</a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a rel="visio-in-brief" href="#">Visio In Brief</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="menu-item has-children">
+                        <a href="https://visiofund.co.za/our-funds/">Our Funds</a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="#">Hedge Funds</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="menu-item has-children">
+                        <a href="https://visiofund.co.za/governance/">Governance</a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a rel="responsible-investing" href="#/">Responsible Investing</a></li>
+                     
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="https://visiofund.co.za/contact-us/">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content would go here -->
+     <!-- Main Carousel/Slider Section -->
+<section class="hero-slider">
+    <div class="slider-container">
+        <a class="next-button"></a>
+        <ul class="slide-list">
+            <li class="slide active" rel="1">
+                <h3>Looking beyond the ordinary for 21 years</h3>
+                <!-- Comment: Replace with actual image -->
+                <img src="/images/sliderimage2.png" alt="Visio Fund looking beyond the ordinary">
+            </li>
+            <li class="slide next" rel="2">
+                <h3>We leave no stone unturned</h3>
+                <!-- Comment: Replace with actual image -->
+                <img src="./images/sliderimage1.jpg" alt="Visio Fund leaves no stone unturned">
+            </li>
+            <li class="slide next" rel="3">
+                <h3>We can and we will</h3>
+                <!-- Comment: Replace with actual image -->
+                <img src="/images/sliderimage3.png" alt="Visio Fund - We can and we will">
+            </li>
+        </ul>
+        <div class="slider-dots">
+            <span class="dot active" rel="1"></span>
+            <span class="dot" rel="2"></span>
+            <span class="dot" rel="3"></span>
+        </div>
+    </div>
+</section>
+
+<section class="intro-section">
+    <div class="intro-container">
+        <p class="intro-text">
+            Visio is an investment management firm initially founded by Patrice Moyal in 2003. The nimble, highly focused and dynamic team manage assets across listed strategies for a diversified client base that includes some of the world's largest and most sophisticated investors.
+        </p>
+        <div class="company-logo">
+            <!-- Logo image is set via background-image in CSS -->
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA Links Section -->
+<section class="cta-section">
+    <div class="cta-container">
+        <ul class="cta-blocks">
+            <li>
+                <a class="anchor" rel="visio-difference" href="#" title="The Visio difference">
+                    <span>
+                        The Visio<br> difference
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="anchor" rel="visio-team" href="#" title="Meet the Visio team">
+                    <span>
+                        Meet the<br> Visio team
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Our funds and investments">
+                    <span>
+                        Our funds<br> and investments
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <ul class="sub-links">
+            <li>
+                <a href="#" title="Hedge Funds">Hedge Funds</a>
+            </li>
+            <li>
+                <a href="#" title="Unit Trusts">Unit Trusts</a>
+            </li>
+            <li>
+                <a href="#" title="Segregated Mandates">Segregated Mandates</a>
+            </li>
+            <li>
+                <a href="#" title="Africa Funds">Africa Funds</a>
+            </li>
+            <li>
+                <a href="#" title="Fund Performance">Fund Performance</a>
+            </li>
+            <li>
+                <a class="anchor" rel="risk-management" href="#" title="Risk Management">Risk Management</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

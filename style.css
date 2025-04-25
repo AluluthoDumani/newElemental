@@ -1,0 +1,742 @@
+/* =================================
+   BASE STYLES
+================================= */
+* {
+    box-sizing: border-box;
+    transition: 0.1s;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* =================================
+   HEADER & NAVIGATION STYLES
+================================= */
+
+/* Header styles */
+.top-header {
+    height: 175px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: 0.3s;
+    z-index: 50;
+}
+
+.top-header.small {
+    height: 80px;
+}
+
+.header-container {
+    max-width: 1620px;
+    margin: 0 auto;
+    padding: 60px 60px 0;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Logo styles */
+.logo-link {
+    float: left;
+    margin-top: -5px;
+}
+
+.logo-link img {
+    width: 220px;
+    transition: 0.3s;
+}
+
+/* Submenu inside header */
+.page-submenu {
+    overflow: hidden;
+    float: left;
+    margin-left: 50px;
+}
+
+/* Hamburger button styles */
+.hamburger-button {
+    float: right;
+    margin-top: 15px;
+    width: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hamburger-button span {
+    display: block;
+    height: 3px;
+    background-color: #061C2C;
+    margin-bottom: 8px;
+}
+
+/* Main navigation menu styles */
+.main-navigation {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #061C2C;
+    top: 0;
+    left: -100%;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.main-navigation.open {
+    left: 0;
+    opacity: 1;
+}
+
+.nav-container {
+    max-width: 1660px;
+    margin: 0 auto;
+    padding: 60px 60px 0;
+    overflow: hidden;
+    position: relative;
+    height: calc(100% - 120px);
+}
+
+/* Close button for navigation */
+.close-button {
+    height: 24px;
+    width: 24px;
+    background-image: url(/images/close.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: right;
+    display: inline;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Logo in nav menu */
+.nav-logo {
+    float: left;
+}
+
+.nav-logo img {
+    width: 220px;
+}
+
+/* Menu styles */
+.menu-container {
+    clear: both;
+    padding-top: 60px;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-item {
+    margin-bottom: 20px;
+}
+
+.menu-item a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.submenu {
+    list-style-type: none;
+    padding: 15px 0 0 20px;
+    display: none;
+}
+
+.menu-item.has-children:hover .submenu {
+    display: block;
+}
+
+.submenu-item {
+    margin-bottom: 10px;
+}
+
+.submenu-item a {
+    font-size: 18px;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.submenu-item a:hover {
+    opacity: 1;
+}
+
+/* =================================
+   HERO SLIDER/CAROUSEL STYLES
+================================= */
+
+/* Hero Slider/Carousel Section */
+.hero-slider {
+    position: relative;
+    margin-bottom: 90px;
+    margin-top: 175px; /* Match header height for proper spacing */
+}
+
+/* Colored bars behind the slider */
+.hero-slider:before {
+    left: 0;
+    top: 50%;
+    margin-top: -60px;
+    position: absolute;
+    width: 50%;
+    background-color: #244AC2;
+    display: block;
+    content: "";
+    height: 120px;
+}
+
+.hero-slider:after {
+    right: 0;
+    top: 50%;
+    margin-top: -60px;
+    position: absolute;
+    width: 50%;
+    background-color: #000000;
+    display: block;
+    content: "";
+    height: 120px;
+}
+
+/* Slider container */
+.slider-container {
+    max-width: 1620px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* Next slide button */
+.next-button {
+    position: absolute;
+    z-index: 20;
+    width: 101px;
+    height: 118px;
+    display: block;
+    background-image: url(/images/slider-next.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right center;
+    top: 50%;
+    right: 0;
+    margin-top: -59px;
+    cursor: pointer;
+}
+
+/* Slide list */
+.slide-list {
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 500px; /* Set a fixed height for the slider */
+}
+
+/* Individual slides */
+.slide {
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    transition: 1s;
+    left: 100%; /* Start position for inactive slides */
+    opacity: 0;
+}
+
+/* Active slide */
+.slide.active {
+    position: relative;
+    left: 0;
+    transition: 1s;
+    z-index: 8;
+    opacity: 1;
+}
+
+/* Next slide */
+.slide.next {
+    left: 100%;
+    z-index: 7;
+}
+
+/* Slide headings */
+.slide h3 {
+    position: absolute;
+    color: white;
+    font-size: 36px;
+    font-weight: 600;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 60px;
+    max-width: 600px;
+    z-index: 5;
+}
+
+/* Slide images */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Pagination dots */
+.slider-dots {
+    position: absolute;
+    display: block;
+    right: 60px;
+    bottom: 40px;
+    z-index: 10;
+    text-align: center;
+}
+
+.dot {
+    background-image: url(/images/slider-dots.svg);
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 1px;
+    cursor: pointer;
+}
+
+.dot.active {
+    opacity: 0.39;
+    transform: rotate(160deg);
+}
+
+/* =================================
+   INTRO SECTION STYLES
+================================= */
+
+.intro-section {
+    padding: 0 60px;
+    margin-bottom: 90px;
+}
+
+.intro-container {
+    max-width: 1620px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.intro-text {
+    width: 60%;
+    display: block;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 300;
+    color: #061C2C;
+    float: left;
+    margin-top: 20px;
+}
+
+.company-logo {
+    float: right;
+    width: 416px;
+    height: 42px;
+    background-image: url(/images/company-logo.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 34px;
+    opacity: 0; /* Start hidden for animation */
+}
+
+/* =================================
+   CTA LINKS SECTION STYLES
+================================= */
+
+.cta-section {
+    padding: 0 60px;
+    margin-bottom: 110px;
+}
+
+.cta-container {
+    max-width: 1620px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* CTA Blocks */
+.cta-blocks {
+    margin: 0 -12px 48px;
+    padding: 0;
+    display: block;
+    height: 200px;
+    list-style: none;
+}
+
+.cta-blocks li {
+    float: left;
+    width: 33.33333%;
+    margin: 0;
+    padding: 0 12px;
+    height: 200px;
+    display: inline-block;
+}
+
+.cta-blocks li a {
+    display: block;
+    height: 100%;
+    background-color: #061C2C;
+    position: relative;
+    padding: 98px 0 0 32px;
+    background-image: url(/images/ctalinks.svg); /* Add your icon image here */
+    background-repeat: no-repeat;
+    background-position: top 31px left 32px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cta-blocks li a:hover {
+    background-color: #244AC2;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.cta-blocks li a span {
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Sub Links */
+.sub-links {
+    display: block;
+    margin: 0 -12px;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+.sub-links li {
+    float: left;
+    display: inline-block;
+    margin: 0;
+    width: 16.6666666%;
+    padding: 0 12px;
+}
+
+.sub-links li a {
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 17px;
+    background-color: #244AC2;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+    background-image: url(/images/assetsub.svg); /* Add your arrow icon here */
+    transition: 0.3s;
+}
+
+.sub-links li a:hover {
+    background-color: #061C2C;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* =================================
+   RESPONSIVE STYLES
+================================= */
+
+/* Medium screens (tablets and smaller desktops) */
+@media (max-width: 1435px) {
+    .sub-links li {
+        width: 33.333333%;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 1100px) {
+    /* Header responsive */
+    .top-header, .top-header.small {
+        height: 80px;
+    }
+
+    .header-container, .top-header.small .header-container {
+        padding: 26px 30px 0;
+    }
+
+    .logo-link, .top-header.small .logo-link {
+        margin-top: -3px;
+    }
+
+    .logo-link img, .top-header.small .logo-link img {
+        width: 120px;
+    }
+
+    .page-submenu {
+        display: none;
+    }
+
+    .hamburger-button, .top-header.small .hamburger-button {
+        margin-top: 1px;
+    }
+    
+    .nav-container {
+        padding: 30px 30px 0;
+    }
+    
+    .menu-item a {
+        font-size: 20px;
+    }
+    
+    .submenu-item a {
+        font-size: 16px;
+    }
+    
+    /* Slider responsive */
+    .hero-slider {
+        margin-top: 80px; /* Match smaller header height */
+    }
+    
+    .slide-list {
+        height: 400px;
+    }
+    
+    .slide h3 {
+        font-size: 28px;
+        left: 30px;
+        max-width: 400px;
+    }
+    
+    .slider-dots {
+        right: 30px;
+        bottom: 20px;
+    }
+    
+    .next-button {
+        width: 70px;
+        height: 80px;
+        margin-top: -40px;
+    }
+    
+    /* Intro section responsive */
+    .intro-section {
+        padding: 0 30px;
+        margin-bottom: 70px;
+    }
+    
+    .intro-text {
+        font-size: 22px;
+        line-height: 32px;
+        width: 55%;
+    }
+    
+    .company-logo {
+        width: 350px;
+        height: 36px;
+    }
+    
+    /* CTA section responsive */
+    .cta-section {
+        padding: 0 30px;
+        margin-bottom: 90px;
+    }
+    
+    .cta-blocks li a {
+        padding: 85px 0 0 25px;
+        background-position: top 25px left 25px;
+    }
+    
+    .cta-blocks li a span {
+        font-size: 20px;
+    }
+    
+    .sub-links li a {
+        font-size: 13px;
+        padding: 0 15px;
+    }
+}
+
+/* Tablet screens */
+@media (max-width: 768px) {
+    /* Navigation responsive */
+    .menu-item {
+        margin-bottom: 15px;
+    }
+    
+    /* Slider responsive */
+    .hero-slider:before,
+    .hero-slider:after {
+        height: 80px;
+        margin-top: -40px;
+    }
+    
+    .slide-list {
+        height: 300px;
+    }
+    
+    .slide h3 {
+        font-size: 22px;
+        left: 20px;
+        max-width: 300px;
+    }
+    
+    .next-button {
+        width: 50px;
+        height: 60px;
+        margin-top: -30px;
+    }
+    
+    /* Intro section responsive */
+    .intro-section {
+        padding: 0 20px;
+        margin-bottom: 60px;
+    }
+    
+    .intro-text {
+        width: 100%;
+        font-size: 20px;
+        line-height: 30px;
+        float: none;
+        margin-bottom: 30px;
+    }
+    
+    .company-logo {
+        float: none;
+        width: 300px;
+        height: 32px;
+        margin: 0 auto;
+    }
+    
+    /* CTA section responsive */
+    .cta-section {
+        padding: 0 20px;
+        margin-bottom: 70px;
+    }
+    
+    .cta-blocks {
+        height: auto;
+    }
+    
+    .cta-blocks li {
+        width: 100%;
+        float: none;
+        margin-bottom: 24px;
+        height: 150px;
+    }
+    
+    .cta-blocks li a {
+        padding: 80px 0 0 20px;
+        background-position: top 20px left 20px;
+    }
+    
+    .cta-blocks li a span {
+        font-size: 18px;
+    }
+    
+    .sub-links li {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    /* Header responsive */
+    .header-container {
+        padding: 26px 15px 0;
+    }
+    
+    .nav-container {
+        padding: 30px 15px 0;
+    }
+    
+    .logo-link img {
+        width: 100px;
+    }
+    
+    .menu-item a {
+        font-size: 18px;
+    }
+    
+    .submenu-item a {
+        font-size: 14px;
+    }
+    
+    /* Slider responsive */
+    .slide-list {
+        height: 250px;
+    }
+    
+    .slide h3 {
+        font-size: 18px;
+        left: 15px;
+        max-width: 200px;
+    }
+    
+    .hero-slider:before,
+    .hero-slider:after {
+        height: 60px;
+        margin-top: -30px;
+    }
+    
+    .slider-dots {
+        right: 15px;
+        bottom: 15px;
+    }
+    
+    .dot {
+        width: 18px;
+        height: 18px;
+    }
+    
+    /* Intro section responsive */
+    .intro-section {
+        padding: 0 15px;
+        margin-bottom: 50px;
+    }
+    
+    .intro-text {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    
+    .company-logo {
+        width: 250px;
+        height: 28px;
+    }
+    
+    /* CTA section responsive */
+    .cta-section {
+        padding: 0 15px;
+        margin-bottom: 60px;
+    }
+    
+    .cta-blocks li {
+        height: 140px;
+    }
+    
+    .cta-blocks li a span {
+        font-size: 16px;
+    }
+    
+    .sub-links li {
+        width: 100%;
+        float: none;
+        margin-bottom: 15px;
+    }
+}
